@@ -45,13 +45,7 @@ Composer support is built-in so when you run a deploy, `composer install` is aut
 
 ## Contributing
 
-Everyone is welcome to help [contribute](CONTRIBUTING.md) and improve this project. There are several ways you can contribute:
-
-* Reporting issues (please read [issue guidelines](https://github.com/necolas/issue-guidelines))
-* Suggesting new features
-* Writing or refactoring code
-* Fixing [issues](https://github.com/roots/bedrock/issues)
-* Replying to questions on the [forum](https://discourse.roots.io/)
+Contributions are welcome from everyone. We have [contributing guidelines](CONTRIBUTING.md) to help you get started.
 
 ## Support
 
