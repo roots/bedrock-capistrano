@@ -4,7 +4,7 @@ These are the Capistrano configs for deploying [Bedrock](https://github.com/root
 
 [Capistrano](http://www.capistranorb.com/) is a remote server automation and deployment tool. It will let you deploy or rollback your application in one command:
 
-Screencast ($): [Deploying WordPress with Capistrano](https://roots.io/screencasts/deploying-wordpress-with-capistrano/)
+Screencast (:moneybag:): [Deploying WordPress with Capistrano](https://roots.io/screencasts/deploying-wordpress-with-capistrano/)
 
 ## Requirements
 
