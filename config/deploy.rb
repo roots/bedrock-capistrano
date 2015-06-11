@@ -1,7 +1,9 @@
 set :application, 'my_app_name'
 set :repo_url, 'git@example.com:me/my_repo.git'
 
-# These folders will be uploaded to the remote using rsync
+# These folders will be uploaded to the remote using rsync. This is useful for
+# files and folders that are not part of the repository.
+#
 # Example:
 # set :upload_folders, [
 # 	'web/app/mu-plugins/', 'web/app/plugins/',
@@ -9,7 +11,6 @@ set :repo_url, 'git@example.com:me/my_repo.git'
 # 	'web/app/themes/*/assets/js/',
 #   'web/app/themes/sage/dist/'
 # ]
-# Be sure to add a trailing slash
 set :upload_folders, [
 	# 'web/app/mu-plugins/', 'web/app/plugins/'
 ]
