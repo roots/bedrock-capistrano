@@ -6,6 +6,8 @@ These are the Capistrano configs for deploying [Bedrock](https://github.com/root
 
 Screencast (:moneybag:): [Deploying WordPress with Capistrano](https://roots.io/screencasts/deploying-wordpress-with-capistrano/)
 
+**Status**: This project is stable, feature complete, and production ready. This means that we won't be adding new features. Only fixing existing bugs and ensuring that base functionality works.
+
 ## Requirements
 
 * Ruby >= 1.9
