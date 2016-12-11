@@ -1,6 +1,20 @@
 set :application, 'my_app_name'
 set :repo_url, 'git@example.com:me/my_repo.git'
 
+# These folders will be uploaded to the remote using rsync. This is useful for
+# files and folders that are not part of the repository.
+#
+# Example:
+# set :upload_folders, [
+# 	'web/app/mu-plugins/', 'web/app/plugins/',
+# 	'web/app/themes/*/assets/css/',
+# 	'web/app/themes/*/assets/js/',
+#   'web/app/themes/sage/dist/'
+# ]
+set :upload_folders, [
+	# 'web/app/mu-plugins/', 'web/app/plugins/'
+]
+
 # Branch options
 # Prompts for the branch name (defaults to current branch)
 #ask :branch, -> { `git rev-parse --abbrev-ref HEAD`.chomp }
@@ -59,3 +73,19 @@ end
 # Note that you need to have WP-CLI installed on your server
 # Uncomment the following line to run it on deploys if needed
 # after 'deploy:publishing', 'deploy:update_option_paths'
+
+namespace :deploy do
+	desc 'Upload compiled stylesheets and javascript files'
+	task :copy_assets do
+		on roles(:app) do |role|
+			run_locally do
+				fetch(:upload_folders).each do |f|
+					execute :rsync, %{-ahvzR --rsh=ssh}, f,
+					  "#{role.user}@#{role.hostname}:#{release_path}"
+				end
+			end
+		end
+	end
+end
+
+after 'deploy:updating', 'deploy:copy_assets'
